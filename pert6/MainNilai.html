@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menghitung Nilai Rata-rata</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        input {
+            width: 5%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4897f2;
+            color: rgb(0, 0, 0);
+            border: solid 2px #000000;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align : center;">
+        <h1>Menghitung Nilai Rata-rata</h1>
+
+    <h2>Form Perhitungan Nilai Rata-rata</h2>
+
+    <form id="formNilai">
+        <label>Nilai Tugas :</label>
+        <input type="number" id="tugas" min="0" max="100" required><br><br>
+
+        <label>Nilai Kuis :</label>
+        <input type="number" id="kuis" min="0" max="100" required><br><br>
+
+        <label>Nilai UTS :</label>
+        <input type="number" id="uts" min="0" max="100" required><br><br>
+
+        <label>Nilai UAS :</label>
+        <input type="number" id="uas" min="0" max="100" required><br><br>
+
+        <button type="button" onclick="hitungRata()">Hitung Rata-rata</button>
+    </form>
+
+    <h3>Hasil :</h3>
+    <p id="hasil"></p>
+    </div>
+
+    <script>
+        function hitungRata() {
+            let tugas = Number(document.getElementById("tugas").value);
+            let kuis = Number(document.getElementById("kuis").value);
+            let uts = Number(document.getElementById("uts").value);
+            let uas = Number(document.getElementById("uas").value);
+
+            let rata = (tugas + kuis + uts + uas) / 4;
+
+            document.getElementById("hasil").innerHTML = 
+                "Nilai rata-rata = " + rata.toFixed(2);
+        }
+    </script>
+</body>
+</html>
