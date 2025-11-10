@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Formulir Mahasigma</h1>
+    <form action="/submit" method="post">
+        <label for="nim">NIM :</label><br>
+            <input type="text" id="nim" name="nim"><br><br>
+        <label for="nama">Nama :</label><br>
+            <input type="text" id="nama" name=""><br><br>
+        
+        <label for="gender">Gender</label><br>
+            <input type="radio" id="gender" name="gender" value="gender">
+        <label for="gender">Laki-Laki</label><br>
+            <input type="radio" id="gender" name="gender" value="gender">
+        <label for="gender">Perempuan</label><br><br>
+
+        <label for="TeLa">Tempat Lahir :</label><br>
+            <select id="alamat" name="Tela" required><br><br>
+                <option value="Denpasar">Denpasar</option>
+                <option value="Gianyar">Gianyar</option>
+                <option value="Tabanan">Tabanan</option>
+                <option value="Badung">Badung</option>
+                <option value="Klungkung">Klungkung</option>
+                <option value="Bangli">Bangli</option>
+                <option value="Karangasem">Karangasem</option>
+                <option value="Buleleng">Buleleng</option>
+                <option value="Jembrana">Jembrana</option>
+                <option value="Luar Bali">Luar Bali</option>
+            </select><br><br>
+
+        <label for="TaLa">Tanggal Lahir :</label><br>
+            <input type="date" id="TaLa" name="TaLa"><br><br>
+
+        <label for="hobi">Alamat :</label><br>
+            <input type="text" id="alamat" name="alamat"><br><br>
+
+        <label for="noHP">No. HP :</label><br>
+            <input type="number" id="noHP" name="noHP"><br><br>
+        
+        <label for="email">Email :</label><br>
+            <input type="email" id="email" name="email"><br><br>
+
+        <label for="hobi">Hobi :</label><br>
+            <select id="hobi" name="hobi" onchange="checkHobi(this);">
+    <option value="">Pilih Hobi</option>
+    <option value="membaca">Membaca</option>
+    <option value="menulis">Menulis</option>
+    <option value="olahraga">Olahraga</option>
+    <option value="game">Bermain Game</option>
+    <option value="lainnya">Lainnya</option>
+            </select><br>
+
+            <input type="text" id="hobiLainnya" name="hobiLainnya" style="display:none;" placeholder="Masukkan hobi Anda"><br><br>
+
+        <script>
+        function checkHobi(select) {
+            var hobiLainnya = document.getElementById('hobiLainnya');
+            if (select.value === 'lainnya') {
+            hobiLainnya.style.display = 'block';
+            } else {
+            hobiLainnya.style.display = 'none';
+            }
+        }
+        </script>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
